@@ -1,0 +1,14 @@
+.favorite-city-table {
+    margin-top: 45px;
+}
+
+.favorite-city-table  .total {
+    text-align: right;
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.favorite-city-table  button {
+    margin-left: 5px;
+    margin-top: 5px;
+}

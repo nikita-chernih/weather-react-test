@@ -1,0 +1,12 @@
+.cities-list {
+    width: 30%;
+    margin-top: 15px;
+    margin-left: 35%;
+    overflow-y: scroll;
+    height: 100px;
+}
+
+.cities-list li:hover{
+    color: red;
+    cursor: pointer;
+}

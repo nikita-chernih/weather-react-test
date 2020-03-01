@@ -1,0 +1,14 @@
+.weather-value {
+    margin-top: 15px;
+    width: 30% ;
+    margin-left: 35%;
+}
+.weather-value .fs48{
+    font-size: 48px;
+}
+
+.weather-value .va-tb{
+    vertical-align: text-bottom;
+    margin-left: 15px;
+}
+
