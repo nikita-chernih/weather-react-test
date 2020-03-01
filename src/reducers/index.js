@@ -1,11 +1,13 @@
 import React from "react";
 
+
 const initialState = {
     cities: [],
     loading: true,
     error: null,
     term: '',
     favCity: [],
+    pageCity: [],
     selectedCity: {
     }
 };
@@ -62,6 +64,7 @@ const reducer = (state = initialState, action) => {
             error: null,
             term: '',
             favCity: state.favCity,
+            pageCity: state.pageCity,
             selectedCity: state.selectedCity
         };
         case 'FETCH_TERM_REQUEST' : return {
@@ -70,6 +73,7 @@ const reducer = (state = initialState, action) => {
             loading: false,
             error: null,
             favCity: state.favCity,
+            pageCity: state.pageCity,
             selectedCity: state.selectedCity
         };
         case 'FETCH_CITIES_SUCCESS': return {
@@ -78,6 +82,7 @@ const reducer = (state = initialState, action) => {
             term: state.term,
             error: null,
             favCity: state.favCity,
+            pageCity: state.pageCity,
             selectedCity: state.selectedCity
         };
         case 'FETCH_CITY_FAILURE': return {
@@ -85,6 +90,7 @@ const reducer = (state = initialState, action) => {
             loading: false,
             term: '',
             error: action.payload,
+            pageCity: [],
             favCity: [],
             selectedCity: []
         };
@@ -104,6 +110,11 @@ const reducer = (state = initialState, action) => {
            return updateOrder(state, action.payload);
         case 'CITY_REMOVE_TO_FAVORITE':
             return deleteOrder(state, action.payload, false);
+        case 'CITY_NEW_PAGE_SELECTED':
+            return {
+                ...state,
+                pageCity: action.payload
+            };
     }
     return state;
 };

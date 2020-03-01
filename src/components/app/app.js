@@ -1,20 +1,18 @@
 import React from 'react';
+import {Route, Switch} from 'react-router-dom'
+import {HomePage, CartPage} from '../pages'
 import './app.css';
-import CitiesList from "../cities-list";
-import SearchPanel from "../search-panel";
-import WeatherValue from "../weather-value";
-import FavoriteCityTable from "../favotire-city-table";
 import {withWeatherstoreService} from '../hoc';
 
-
-const App = ({}) => {
+const App = () => {
     return (
-        <div className='container'>
-        <SearchPanel/>
-        <CitiesList />
-        <WeatherValue/>
-        <FavoriteCityTable/>
-        </div>
+        <Switch>
+            <Route path="/"
+            component={HomePage}
+            exact/>
+            <Route path="/cart"
+                   component={CartPage}/>
+        </Switch>
     )
 };
 

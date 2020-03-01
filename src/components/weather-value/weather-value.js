@@ -9,8 +9,10 @@ import { citiesRequested, cityAddedToFavorite, citySelected} from "../../actions
 class WeatherValue extends Component {
 
     componentDidMount() {
-        //ID Kemerovo
-        this.props.initialKem(1503901);
+        if (!this.props.items.name) {
+            //id Kemerovo
+            this.props.initialKem(1503901);
+        }
     }
 
     render() {

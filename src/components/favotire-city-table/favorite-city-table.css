@@ -12,3 +12,8 @@
     margin-left: 5px;
     margin-top: 5px;
 }
+
+.favorite-city-table .td-clicker:hover{
+    color: red;
+    cursor: pointer;
+}

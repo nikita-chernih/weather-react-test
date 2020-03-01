@@ -2,9 +2,10 @@ import React from "react";
 import {connect } from 'react-redux'
 import './favorite-city-table.css'
 import Spinner from "../spinner"
-import {cityRemovedFromFavorite} from "../../actions"
+import {Link} from "react-router-dom";
+import {cityRemovedFromFavorite, cityNewPageSelected} from "../../actions"
 
-const FavoriteCityTable = ({items, onDelete, loading}) => {
+const FavoriteCityTable = ({items, onDelete, onSelect, loading}) => {
 
     //Загруза очень быстрая, лишь общий вид портит, если включить
     // if (loading) {
@@ -34,7 +35,7 @@ const FavoriteCityTable = ({items, onDelete, loading}) => {
                         return (
                             <tr key={id}>
                                 <td>{idx + 1}</td>
-                                <td>{name}</td>
+                                <td className='td-clicker' onClick={() => onSelect(item) }> <Link to='/cart'>{name}</Link></td>
                                 <td>{today} ‎℃</td>
                                 <td>{tomorrow} ‎℃</td>
                                 <td>{after3day} ‎℃</td>
@@ -66,7 +67,8 @@ const mapStateToProps = ({favCity, loading}) => {
 };
 
 const mapDispatchToProps = {
-        onDelete:cityRemovedFromFavorite
+        onDelete:cityRemovedFromFavorite,
+        onSelect: cityNewPageSelected
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FavoriteCityTable);

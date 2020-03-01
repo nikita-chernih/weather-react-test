@@ -32,6 +32,12 @@ const cityAddedToFavorite = (cityId) => {
     }
 };
 
+const cityNewPageSelected = (city) => {
+    return {
+        type: 'CITY_NEW_PAGE_SELECTED',
+        payload:city
+    }
+};
 const cityRemovedFromFavorite = (cityId) => {
     return {
         type: 'CITY_REMOVE_TO_FAVORITE',
@@ -61,5 +67,6 @@ export {
     cityAddedToFavorite,
     cityRemovedFromFavorite,
     citySelected,
-    citySearch
+    citySearch,
+    cityNewPageSelected
 };
